@@ -4,6 +4,43 @@
 .minor-section {
     padding: 10px;
     margin-bottom: 10px;
-    border: solid 1px #888;
-    background-color: #DDD8C4;
+    border: solid 5px #FB8500;
+    border-style: dashed;
+    background-color: #FFB703;
   }
+
+h1 {
+  color: #023047;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: grey;
+  font-family: 'Cambria';
+  font-size: 275%;
+}
+
+h2 {
+  color: #219EBC;
+  -webkit-text-stroke-width: 1px ;
+  -webkit-text-stroke-color: whitesmoke;
+  font-family: 'Times';
+  font-size: 175%;
+}
+
+p {
+  color: #219EBC;
+  -webkit-text-stroke-width: 1px ;
+  -webkit-text-stroke-color: black;
+  font-family: 'Times New Roman';
+  text-indent: 25px;
+  font-size: 125%;
+}
+
+body {
+  background-color: #023047;
+}
+
+#content {
+  margin: 10px;
+  padding: 10px;
+  background-color: #219EBC;
+  border: dotted 5px whitesmoke;
+}

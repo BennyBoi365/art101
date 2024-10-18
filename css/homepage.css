@@ -5,7 +5,7 @@
   max-width: 500px;
 }
 
-#my-portrait {
-  margin: 10 px;
-  width: 250 px;
+.my-portrait {
+   margin: 10px;
+   max-width: 250px;
 }

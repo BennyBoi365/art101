@@ -4,6 +4,10 @@
 .minor-section {
     padding: 10px;
     margin-bottom: 10px;
-    border: solid 1px #888;
-    background-color: #DDD8C4;
+    border: dashed 5px white;
+    background-color: skyblue;
   }
+
+.camry {
+   max-width: 250px;
+}

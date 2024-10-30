@@ -1,4 +1,4 @@
-// index.js - Lab 6 JavaScript
+// index.js - Lab 7 JavaScript
 /*
  * Author: Ronie Antonio and Ben Awtry
  * Emails: <rantoni@ucsc.edu> and <bawtry@ucsc.edu>

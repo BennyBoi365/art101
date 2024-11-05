@@ -1,0 +1,17 @@
+.minor-section {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: solid 10px black;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+  }
+
+.special {
+    background-color: cyan;
+    border: solid 10px white;
+    color: black;
+    font-weight: bold;
+    padding: 10px;
+    margin-bottom: 10px;
+}

@@ -6,8 +6,7 @@
 }
 
 .text p {
-    display: block;
-    text-align: left;
+    display: inline-block;
     max-width: 60%;
     margin: 3px;
     padding: 5px 10px;
@@ -19,14 +18,17 @@
 }
 
 .userText p {
-    display: block;
-    text-align: right;
+    display: inline-block;
+    position: relative;
+    left: 100%;
+    transform: translateX(-100%);
+    /* Code for shifting block and text to right side of screen taken from user Geeky on Stackoverflow */
     max-width: 60%;
     margin: 3px;
     padding: 5px 10px;
     border-radius: 15px;
-    background-color: navy;
-    color: white;
+    background-color: white;
+    color: navy;
     font-family: sans-serif;
     font-size: 0.8em;
     margin-left: auto;

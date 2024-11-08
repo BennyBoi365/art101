@@ -30,6 +30,7 @@ $("#make-convo").click(function(){
 // Click listener for submit button
 $("#submitButton").click(function(){
      // Get userInput value
+     // Code from WesBot
      var input = $("#userInput").val();
 
      // Append a new div to our output div

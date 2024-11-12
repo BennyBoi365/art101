@@ -1,0 +1,15 @@
+.minor-section {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: dashed 5px white;
+    background-color: skyblue;
+}
+
+.text p {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: solid 10px black;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+}

@@ -1,4 +1,4 @@
-// index.js - Lab 11 JavaScript
+// index.js - Lab 12 JavaScript
 /*
  * Author: Ronie Antonio and Ben Awtry
  * Emails: <rantoni@ucsc.edu> and <bawtry@ucsc.edu>
@@ -6,7 +6,7 @@
  * Liscence: Public Domain
 */
 
-// Return House
+// Return Gryffindor, Ravenclaw, Slytherin, or Hufflepuff
 // depending on length mod 4
 function sortingHat(str) {
     len = str.length;
@@ -25,6 +25,7 @@ function sortingHat(str) {
     }
 }
 
+//Click listener for submit button and display house
 var myButton = document.getElementById("submit");
 myButton.addEventListener("click", function() {
     var name = document.getElementById("input").value;
@@ -32,3 +33,5 @@ myButton.addEventListener("click", function() {
     newText = "<p>The Sorting Hat has sorted you into " + house + "</p>";
     document.getElementById("output").innerHTML = newText;
 })
+
+//J.K. Rowling sucks

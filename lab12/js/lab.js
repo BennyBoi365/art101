@@ -12,16 +12,16 @@ function sortingHat(str) {
     len = str.length;
     mod = len % 4;
     if (mod == 0) {
-        return "Gryffindor" + "<br>" + "<h4>House of the Brave and Determined</h4>"
+        return "Gryffindor" + "<br>" + "<h4>House of the Brave and Determined</h4>" + "<img class='crest' src='./img/gryffindor.png'>"
     }
     else if (mod == 1) {
-        return "Ravenclaw" + "<br>" + "<h4>House of the Wise and Curious</h4>"
+        return "Ravenclaw" + "<br>" + "<h4>House of the Wise and Curious</h4>" + "<img class='crest' src='./img/ravenclaw.png'>"
     }
     else if (mod == 2) {
-        return "Slytherin" + "<br>" + "<h4>House of the Ambitious and Cunning</h4>"
+        return "Slytherin" + "<br>" + "<h4>House of the Ambitious and Cunning</h4>" + "<img class='crest' src='./img/slytherin.png'>"
     }
     else if (mod == 3) {
-        return "Hufflepuff" + "<br>" + "<h4>House of the Loyal and Kind</h4>"
+        return "Hufflepuff" + "<br>" + "<h4>House of the Loyal and Kind</h4>" + "<img class='crest' src='./img/hufflepuff.png'>"
     }
 }
 

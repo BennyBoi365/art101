@@ -1,0 +1,15 @@
+.minor-section {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: dashed 5px white;
+    background-color: skyblue;
+}
+
+.output-container {
+    column-count: 5; /* Creates 5 vertical columns */
+    column-gap: 20px; /* Space between columns */
+}
+
+.output-container div {
+    margin-bottom: 5px; 
+}

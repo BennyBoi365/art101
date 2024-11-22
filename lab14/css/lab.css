@@ -1,0 +1,16 @@
+.minor-section {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: dashed 5px white;
+    background-color: skyblue;
+}
+
+.picture {
+    max-width: 250px;
+    margin: 10px;
+}
+
+.picture2 {
+    max-width: 350px;
+    margin: 10px;
+}

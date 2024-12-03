@@ -6,21 +6,23 @@
  */
 
 // Define the API endpoint
-let endpoint = "https://xkcd.com/info.0.json";
+let endpoint = "https://api.nasa.gov/planetary/apod";
 
 // Configure the AJAX request
 let ajaxConfig = {
     url: endpoint, // API URL
     method: "GET", // HTTP method
     contentType: "json", // Payload type
-    data: {},
+    data: {
+        api_key: "JngLcxjqOJEtlSZx3UuNH5ssWCx5movzWT31rjtN", // API token
+    },
     success: function(data) {
         console.log(data);
-        let comicObj = data[0];
+        let nasaObj = data[0];
         // Add fields to output
-        $("#output").append("<h2>" + comicObj.title);
-        $("#output").append(`<img src='${comicObj.img}' />`);
-        $("#output").append("<p>" + comicObj.alt);
+        $("#output").append("<h2>" + nasaObj.title);
+        $("#output").append(`<img src='${nasaObj.url}' />`);
+        $("#output").append("<p>" + nasaObj.explanation);
     },
     error: function(xhr, status, error) {
         console.log(error);
@@ -28,4 +30,6 @@ let ajaxConfig = {
 };
 
 // Send AJAX Request
-$.ajax(ajaxConfig);
+$('#activate').click(function () {
+    $.ajax(ajaxConfig);
+});

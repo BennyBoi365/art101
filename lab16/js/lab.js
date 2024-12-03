@@ -22,7 +22,7 @@ let ajaxConfig = {
         let record = data[0];
         // Add title, image, and description to output
         $("#output").append("<h2>" + record.title);
-        $("#output").append(`<img src='${record.url}' />`);
+        $("#output").append(`<img src='${record.url}' width='350'/>`);
         $("#output").append("<p>" + record.explanation);
     },
     error: function(xhr, status, error) { // Error handler

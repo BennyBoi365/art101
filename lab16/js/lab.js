@@ -15,15 +15,17 @@ let ajaxConfig = {
     contentType: "json", // Payload type
     data: {
         api_key: "JngLcxjqOJEtlSZx3UuNH5ssWCx5movzWT31rjtN", // API token
+        count: 1,
     },
     success: function(data) {
         console.log(data);
-        // Add fields to output
-        $("#output").append("<h2>" + data.title);
-        $("#output").append(`<img src='${data.url}' />`);
-        $("#output").append("<p>" + data.explanation);
+        let record = data[0];
+        // Add title, image, and description to output
+        $("#output").append("<h2>" + record.title);
+        $("#output").append(`<img src='${record.url}' />`);
+        $("#output").append("<p>" + record.explanation);
     },
-    error: function(xhr, status, error) {
+    error: function(xhr, status, error) { // Error handler
         console.log(error);
     }
 };

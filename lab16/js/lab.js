@@ -18,11 +18,10 @@ let ajaxConfig = {
     },
     success: function(data) {
         console.log(data);
-        let nasaObj = data[0];
         // Add fields to output
-        $("#output").append("<h2>" + nasaObj.title);
-        $("#output").append(`<img src='${nasaObj.url}' />`);
-        $("#output").append("<p>" + nasaObj.explanation);
+        $("#output").append("<h2>" + data.title);
+        $("#output").append(`<img src='${data.url}' />`);
+        $("#output").append("<p>" + data.explanation);
     },
     error: function(xhr, status, error) {
         console.log(error);

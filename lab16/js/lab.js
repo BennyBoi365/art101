@@ -5,6 +5,63 @@
  *  License: Public Domain
  */
 
+$(document).ready(function() {
+    // keep track of current comic number
+    let currentComicNum = 0; 
+    // Function to fetch and display comic data
+    function getAndPutData(comicNum) {
+        //  API call and places the image and title, maybe pass the endpoint URL
+        let xkcdUrl = comicNum === 0 
+            ? "https://api.allorigins.win/get?url=" + encodeURIComponent("https://xkcd.com/info.0.json") 
+            : "https://api.allorigins.win/get?url=" + encodeURIComponent(`https://xkcd.com/${comicNum}/info.0.json`);
+        // Using the core $.ajax() method
+        $.ajax({
+            // The URL for the request (from the api docs)
+            url: xkcdUrl,
+            // Whether this is a POST or GET request
+            type: "GET",
+            // The type of data expected back
+            dataType: "json",
+            // What do we do when the api call is successful
+            success: function(data) {
+                // If request succeeds
+                console.log(data)
+                let comicData = JSON.parse(data.contents);
+                // Update the page with the new comic data
+                $("#comic-output").html(`
+                    <h1>${comicData.title}</h1>
+                    <img src="${comicData.img}">
+                    <p>${comicData.alt}</p>
+                    <br><br>
+                    <div id="nav-buttons">
+                        <button id="prev-btn">Previous</button>
+                        <button id="next-btn">Next</button>
+                    </div>
+                    <br><br>
+                `);
+               // Update the current comic number
+               currentComicNum = comicData.num;
+               //click events for Previous and Next buttons
+               $("#prev-btn").click(function() {
+                   if (currentComicNum > 1) {
+                       getAndPutData(currentComicNum - 1); 
+                   }
+               });
+               $("#next-btn").click(function() {
+                   getAndPutData(currentComicNum + 1); 
+               });
+            },
+            // What we do if the api call fails
+            error: function(jqXHR, textStatus, errorThrown) {
+                // Error handler
+                console.log("Error:", textStatus, errorThrown);
+            }
+        });
+    }
+    // Get latest comic 
+    getAndPutData(0);
+});
+
 // Define the API endpoint
 let endpoint = "https://api.nasa.gov/planetary/apod";
 
@@ -21,12 +78,15 @@ let ajaxConfig = {
         console.log(data);
         let record = data[0];
         // Add title, image, and description to output
-        $("#output").append("<h2>" + record.title);
-        $("#output").append(`<img src='${record.url}' width='350'/>`);
-        $("#output").append("<p>" + record.explanation);
+        $("#nasa-output").html(`
+            <h1>${record.title}</h1>
+            <img src="${record.url}" width='350'/>
+            <p>${record.explanation}</p>
+        `);
+        
     },
-    error: function(xhr, status, error) { // Error handler
-        console.log(error);
+    error: function(jqXHR, status, error) { // Error handler
+        console.log("Error: ", status, error);
     }
 };
 

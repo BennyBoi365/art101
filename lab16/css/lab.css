@@ -4,3 +4,7 @@
     border: dashed 5px white;
     background-color: skyblue;
 }
+
+.output-container {
+    text-align: center;
+}

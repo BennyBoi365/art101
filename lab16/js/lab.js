@@ -5,6 +5,7 @@
  *  License: Public Domain
  */
 
+// Code for xkcd comics modified from Keith Tran and Josh Chow
 $(document).ready(function() {
     // keep track of current comic number
     let currentComicNum = 0; 
@@ -14,7 +15,7 @@ $(document).ready(function() {
         let xkcdUrl = comicNum === 0 
             ? "https://api.allorigins.win/get?url=" + encodeURIComponent("https://xkcd.com/info.0.json") 
             : "https://api.allorigins.win/get?url=" + encodeURIComponent(`https://xkcd.com/${comicNum}/info.0.json`);
-        // Using the core $.ajax() method
+        // AJAX request
         $.ajax({
             // The URL for the request (from the api docs)
             url: xkcdUrl,
@@ -22,9 +23,7 @@ $(document).ready(function() {
             type: "GET",
             // The type of data expected back
             dataType: "json",
-            // What do we do when the api call is successful
-            success: function(data) {
-                // If request succeeds
+            success: function(data) { // Success handler
                 console.log(data)
                 let comicData = JSON.parse(data.contents);
                 // Update the page with the new comic data
@@ -33,7 +32,7 @@ $(document).ready(function() {
                     <img src="${comicData.img}">
                     <p>${comicData.alt}</p>
                     <br><br>
-                    <div id="nav-buttons">
+                    <div>
                         <button id="prev-btn">Previous</button>
                         <button id="next-btn">Next</button>
                     </div>
@@ -41,7 +40,7 @@ $(document).ready(function() {
                 `);
                // Update the current comic number
                currentComicNum = comicData.num;
-               //click events for Previous and Next buttons
+               // Click listener for previous and next buttons
                $("#prev-btn").click(function() {
                    if (currentComicNum > 1) {
                        getAndPutData(currentComicNum - 1); 
@@ -51,7 +50,6 @@ $(document).ready(function() {
                    getAndPutData(currentComicNum + 1); 
                });
             },
-            // What we do if the api call fails
             error: function(jqXHR, textStatus, errorThrown) {
                 // Error handler
                 console.log("Error:", textStatus, errorThrown);
@@ -74,7 +72,7 @@ let ajaxConfig = {
         api_key: "JngLcxjqOJEtlSZx3UuNH5ssWCx5movzWT31rjtN", // API token
         count: 1,
     },
-    success: function(data) {
+    success: function(data) { // Success handler
         console.log(data);
         let record = data[0];
         // Add title, image, and description to output
@@ -86,11 +84,11 @@ let ajaxConfig = {
         
     },
     error: function(jqXHR, status, error) { // Error handler
-        console.log("Error: ", status, error);
+        console.log("Error:", status, error);
     }
 };
 
-// Send AJAX Request
+// Click listener and Send AJAX Request
 $('#activate').click(function () {
     $.ajax(ajaxConfig);
 });
